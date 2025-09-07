@@ -11,7 +11,7 @@ const OnboardingScreen = () => {
   const navigation = useNavigation<OnboardingScreenNavigationProp>();
 
   const handleGetStarted = () => {
-    console.log('Get Started pressed - SignIn screen not ready yet');
+    navigation.navigate('SignIn');
   };
 
   return (
