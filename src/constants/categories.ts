@@ -1,4 +1,4 @@
-import { Category } from "./interfaces";
+import { Category } from "../interfaces";
 
 export const CATEGORIES: Category[] = [
   {

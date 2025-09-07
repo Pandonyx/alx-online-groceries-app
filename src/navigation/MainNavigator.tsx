@@ -1,22 +1,22 @@
-import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // Import Main Screens
-import HomeScreen from '../screens/Main/HomeScreen';
-import ExploreScreen from '../screens/Main/ExploreScreen';
-import CartScreen from '../screens/Main/CartScreen';
-import FavoritesScreen from '../screens/Main/FavoritesScreen';
-import AccountScreen from '../screens/Main/AccountScreen';
+// import HomeScreen from '../screens/Main/HomeScreen';
+// import ExploreScreen from '../screens/Main/ExploreScreen';
+// import CartScreen from '../screens/Main/CartScreen';
+// import FavoritesScreen from '../screens/Main/FavoritesScreen';
+// import AccountScreen from '../screens/Main/AccountScreen';
 
 // Import Other Screens
-import ProductDetailScreen from '../screens/Main/ProductDetailScreen';
-import BeveragesScreen from '../screens/Main/BeveragesScreen';
-import SearchScreen from '../screens/Main/SearchScreen';
-import FiltersScreen from '../screens/Main/FiltersScreen';
-import CheckoutScreen from '../screens/Main/CheckoutScreen';
-import OrderAcceptedScreen from '../screens/Main/OrderAcceptedScreen';
-import ErrorScreen from '../screens/Main/ErrorScreen';
+// import ProductDetailScreen from '../screens/Main/ProductDetailScreen';
+// import BeveragesScreen from '../screens/Main/BeveragesScreen';
+// import SearchScreen from '../screens/Main/SearchScreen';
+// import FiltersScreen from '../screens/Main/FiltersScreen';
+// import CheckoutScreen from '../screens/Main/CheckoutScreen';
+// import OrderAcceptedScreen from '../screens/Main/OrderAcceptedScreen';
+// import ErrorScreen from '../screens/Main/ErrorScreen';
 
 export type MainTabParamList = {
   Home: undefined;
@@ -46,9 +46,8 @@ const MainTabNavigator: React.FC = () => {
       screenOptions={{
         headerShown: false,
         tabBarStyle: { paddingBottom: 8, height: 60 },
-      }}
-    >
-      <Tab.Screen 
+      }}>
+      {/* <Tab.Screen 
         name="Home" 
         component={HomeScreen}
         options={{
@@ -87,7 +86,7 @@ const MainTabNavigator: React.FC = () => {
           tabBarLabel: 'Account',
           tabBarIcon: () => '👤',
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 };
@@ -95,14 +94,17 @@ const MainTabNavigator: React.FC = () => {
 const MainNavigator: React.FC = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="MainTabs" component={MainTabNavigator} />
-      <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
+      <Stack.Screen
+        name='MainTabs'
+        component={MainTabNavigator}
+      />
+      {/* <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
       <Stack.Screen name="Beverages" component={BeveragesScreen} />
       <Stack.Screen name="Search" component={SearchScreen} />
       <Stack.Screen name="Filters" component={FiltersScreen} />
       <Stack.Screen name="Checkout" component={CheckoutScreen} />
       <Stack.Screen name="OrderAccepted" component={OrderAcceptedScreen} />
-      <Stack.Screen name="Error" component={ErrorScreen} />
+      <Stack.Screen name="Error" component={ErrorScreen} /> */}
     </Stack.Navigator>
   );
 };
