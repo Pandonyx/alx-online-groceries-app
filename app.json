@@ -12,6 +12,18 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "fonts": [
+      "src/assets/fonts/Gilroy-Regular.ttf",
+      "src/assets/fonts/Gilroy-Medium.ttf",
+      "src/assets/fonts/Gilroy-SemiBold.ttf",
+      "src/assets/fonts/Gilroy-Bold.ttf",
+      "src/assets/fonts/Gilroy-Heavy.ttf",
+      "src/assets/fonts/Gilroy-Light.ttf",
+      "src/assets/fonts/Gilroy-Thin.ttf"
+    ],
     "ios": {
       "supportsTablet": true
     },
