@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import type { AuthStackParamList } from '../../navigation/AuthNavigator';
 import { fonts, fontSizes } from '../../constants/fonts';
 
@@ -47,8 +48,7 @@ const SignInScreen = () => {
           <View style={styles.phoneInputContainer}>
             <View style={styles.phoneInputRow}>
               <View style={styles.countryCodeContainer}>
-                {/* Replace with <Image source={require('../../assets/icons/morocco-flag.png')} style={styles.flagImage} /> when uploaded */}
-                <Text style={styles.flagEmoji}>🇲🇦</Text>
+                <Image source={require('../../assets/icons/ma.png')} style={styles.flagImage} />
                 <Text style={styles.countryCode}>+212</Text>
               </View>
               <TextInput
@@ -70,18 +70,18 @@ const SignInScreen = () => {
           </View>
 
           <TouchableOpacity style={styles.googleButton} onPress={handleGoogleSignIn}>
-            <Text style={styles.googleIcon}>G</Text>
+            <Icon name="google" size={18} color="#FFFFFF" style={styles.socialIcon} />
             <Text style={styles.socialButtonText}>Continue with Google</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.facebookButton} onPress={handleFacebookSignIn}>
-            <Text style={styles.facebookIcon}>f</Text>
+            <Icon name="facebook-f" size={18} color="#FFFFFF" style={styles.socialIcon} />
             <Text style={styles.socialButtonText}>Continue with Facebook</Text>
           </TouchableOpacity>
-        </View>
-        
-        <View style={styles.homeIndicatorContainer}>
-          <View style={styles.homeIndicator} />
+          
+          <View style={styles.homeIndicatorContainer}>
+            <View style={styles.homeIndicator} />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 32,
-    marginTop: 8,
+    marginTop: 140,
   },
   dividerLine: {
     flex: 1,
@@ -186,29 +186,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#4A66AC',
     borderRadius: 20,
     paddingVertical: 16,
+    marginBottom: 24,
   },
-  googleIcon: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginRight: 12,
-    color: '#ffffff',
-    overflow: 'hidden',
-  },
-  facebookIcon: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginRight: 12,
-    color: '#ffffff',
-    overflow: 'hidden',
+  socialIcon: {
+    marginRight: 25,
   },
   socialButtonText: {
     fontSize: fontSizes.base,
     color: '#FFFFFF',
-    ...fonts.gilroyBold,
+    ...fonts.gilroySemiBold,
   },
   homeIndicatorContainer: {
     alignItems: 'center',
-    paddingBottom: 16,
+    marginTop: 16,
   },
   homeIndicator: {
     width: 134,
