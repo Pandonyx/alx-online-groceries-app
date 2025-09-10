@@ -19,11 +19,7 @@ type SignInScreenNavigationProp = NativeStackNavigationProp<AuthStackParamList, 
 
 const SignInScreen = () => {
   const navigation = useNavigation<SignInScreenNavigationProp>();
-  const [phoneNumber, setPhoneNumber] = useState('');
-
-  const handleContinue = () => {
-    console.log('Continue with phone:', phoneNumber);
-  };
+  // Country selection logic can be added here in the future
 
   const handleGoogleSignIn = () => {
     console.log('Google Sign In');
@@ -47,20 +43,15 @@ const SignInScreen = () => {
           
           <View style={styles.phoneInputContainer}>
             <View style={styles.phoneInputRow}>
-              <View style={styles.countryCodeContainer}>
-                <Image source={require('../../assets/icons/ma.png')} style={styles.flagImage} />
-                <Text style={styles.countryCode}>+212</Text>
-              </View>
-              <TextInput
-                style={styles.phoneInput}
-                placeholder="Enter your phone number"
-                placeholderTextColor="#7C7C7C"
-                value={phoneNumber}
-                onChangeText={setPhoneNumber}
-                keyboardType="phone-pad"
-              />
+              <TouchableOpacity style={styles.countryDropdown} activeOpacity={0.7}>
+                <View style={styles.countryCodeContainer}>
+                  <Image source={require('../../assets/icons/ma.png')} style={styles.flagImage} />
+                  <Text style={styles.countryCode}>+212</Text>
+                  <Icon name="chevron-down" size={16} color="#181725" style={styles.chevronIcon} />
+                </View>
+              </TouchableOpacity>
+              {/* Future: Add dropdown for country selection here */}
             </View>
-            <View style={styles.inputUnderline} />
           </View>
 
           <View style={styles.dividerContainer}>
@@ -122,14 +113,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 12,
   },
+  countryDropdown: {
+    borderWidth: 1,
+    borderColor: '#E2E2E2',
+    borderRadius: 12,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    marginBottom: 8,
+    backgroundColor: '#fff',
+    alignSelf: 'flex-start',
+  },
   countryCodeContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 16,
-  },
-  flagEmoji: {
-    fontSize: 24,
-    marginRight: 8,
   },
   flagImage: {
     width: 24,
@@ -141,12 +137,11 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.lg,
     color: '#181725',
     ...fonts.gilroyMedium,
+    marginRight: 8,
   },
-  phoneInput: {
-    flex: 1,
-    fontSize: fontSizes.lg,
-    color: '#181725',
-    ...fonts.gilroy,
+  chevronIcon: {
+    marginLeft: 4,
+    alignSelf: 'center',
   },
   inputUnderline: {
     height: 1,
