@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from '../screens/Auth/SplashScreen';
 import OnboardingScreen from '../screens/Auth/OnboardingScreen';
 import SignInScreen from '../screens/Auth/SignInScreen';
-// import NumberInputScreen from '../screens/Auth/NumberInputScreen';
+import NumberInputScreen from '../screens/Auth/NumberInputScreen';
 // import VerificationScreen from '../screens/Auth/VerificationScreen';
 // import LoginScreen from '../screens/Auth/LoginScreen';
 // import SignUpScreen from '../screens/Auth/SignUpScreen';
@@ -39,8 +39,8 @@ const AuthNavigator: React.FC = () => {
     >
       <Stack.Screen name="Splash" component={SplashScreen} />
       <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-      <Stack.Screen name="SignIn" component={SignInScreen} />
-      {/* <Stack.Screen name="NumberInput" component={NumberInputScreen} /> */}
+  <Stack.Screen name="SignIn" component={SignInScreen} />
+  <Stack.Screen name="NumberInput" component={NumberInputScreen} />
       {/* <Stack.Screen name="Verification" component={VerificationScreen} /> */}
       {/* <Stack.Screen name="Login" component={LoginScreen} /> */}
       {/* <Stack.Screen name="SignUp" component={SignUpScreen} /> */}

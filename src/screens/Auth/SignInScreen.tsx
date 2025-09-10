@@ -43,7 +43,7 @@ const SignInScreen = () => {
           
           <View style={styles.phoneInputContainer}>
             <View style={styles.phoneInputRow}>
-              <TouchableOpacity style={styles.countryDropdown} activeOpacity={0.7}>
+              <TouchableOpacity style={styles.countryDropdown} activeOpacity={0.7} onPress={() => navigation.navigate('NumberInput')}>
                 <View style={styles.countryCodeContainer}>
                   <Image source={require('../../assets/icons/ma.png')} style={styles.flagImage} />
                   <Text style={styles.countryCode}>+212</Text>
